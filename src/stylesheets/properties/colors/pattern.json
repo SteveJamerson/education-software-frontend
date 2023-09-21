@@ -32,8 +32,8 @@
             "060": { "value": "#ad8e00" },
             "070": { "value": "#cca800" },
             "080": { "value": "#eac328" },
-            "090": { "value": "#ffe07d" },
-            "095": { "value": "#fff0c8" },
+            "090": { "value": "#fff0c8" },
+            "095": { "value": "#fff4c6" },
             "098": { "value": "#fff8f0" },
             "099": { "value": "#fffbff" },
             "100": { "value": "#ffffff" }
@@ -68,8 +68,8 @@
             "060": { "value": "#00a299" },
             "070": { "value": "#25beb5" },
             "080": { "value": "#4fdbd0" },
-            "090": { "value": "#71f7ec" },
-            "095": { "value": "#b1fff7" },
+            "090": { "value": "#b1fff7" },
+            "095": { "value": "#c5fffc" },
             "098": { "value": "#e4fffb" },
             "099": { "value": "#f2fffc" },
             "100": { "value": "#ffffff" }
