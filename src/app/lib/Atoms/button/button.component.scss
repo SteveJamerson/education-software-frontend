@@ -1,0 +1,135 @@
+@use "../../../../stylesheets/variables" as variables;
+@use "../../../../stylesheets/tokens/tokens-variables" as tokens;
+
+ui-button {
+    display: block;
+}
+
+.#{variables.$prefix}button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    min-width: 40px;
+    padding-inline: 1.5rem;
+    gap: var(--token-spacing-3);
+    font-family: var(--token-font-family, inherit);
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--token-border-radius-pill);
+    transition: 0.3s;
+    transition-property: background-color, color, box-shadow;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0px 4px 8px -4px var(--token-color-surface-inverse-light);
+    }
+
+    &:active,
+    &:focus,
+    &:focus-visible,
+    &:focus-within {
+        outline: none;
+        box-shadow: 0px 2px 6px -4px var(--token-color-surface-inverse-light);
+    }
+
+    &:disabled {
+        box-shadow: none !important;
+        cursor: no-drop;
+    }
+
+    &-loading {
+        span {
+            opacity: 0;
+        }
+    }
+
+    &-full {
+        width: 100%;
+    }
+
+    &-circle {
+        padding: 0;
+        aspect-ratio: 1;
+    }
+
+    @each $name in variables.$theme-schemas {
+        &-#{$name}-primary {
+            color: var(--token-color-#{$name}-on-light);
+            background-color: var(--token-color-#{$name}-light);
+        }
+
+        &-#{$name}-secondary {
+            color: var(--token-color-#{$name}-light);
+            border: 1px solid var(--token-color-outline-light);
+        }
+
+        &-#{$name}-tertiary {
+            color: var(--token-color-#{$name}-light);
+            background-color: var(--token-color-background-light);
+            box-shadow: 0px
+                2px
+                6px -4px
+                var(--token-color-surface-inverse-light);
+        }
+
+        &-#{$name}-soft {
+            color: var(--token-color-#{$name}-on-container-light);
+            background-color: var(--token-color-#{$name}-container-light);
+        }
+
+        &-#{$name}-text {
+            color: var(--token-color-#{$name}-light);
+
+            &:hover {
+                background-color: var(--token-color-background-light);
+            }
+        }
+    }
+
+    ui-icon {
+        font-size: 1.5rem;
+    }
+
+    &.#{variables.$prefix}button-small {
+        height: 30px;
+        min-width: 30px;
+        font-size: 0.75rem;
+
+        ui-icon {
+            font-size: 1.25rem;
+        }
+    }
+
+    &.#{variables.$prefix}button-large {
+        height: 48px;
+        min-width: 48px;
+        padding-inline: 1.5rem;
+    }
+
+    &-icon {
+        padding: 0 !important;
+        aspect-ratio: 1 !important;
+    }
+
+    &:has(.#{variables.$prefix}button-icon-left) {
+        padding-left: 1.5rem;
+    }
+
+    &:has(.#{variables.$prefix}button-icon-right) {
+        padding-right: 1.5rem;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

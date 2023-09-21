@@ -1,0 +1,29 @@
+<button
+    testid="button"
+    [id]="id"
+    [ngClass]="classes"
+    [disabled]="disabled"
+    [type]="type"
+    [disabled]="disabled || loading"
+    [loader]="loading"
+    (click)="onClick.emit($event)"
+>
+    <ng-container *ngIf="iconOnly; else default">
+        <ui-icon testid="icon-only" [name]="iconOnly"></ui-icon>
+    </ng-container>
+    <ng-template #default>
+        <ui-icon
+            testid="icon-left"
+            class="ds-button-icon-left"
+            *ngIf="iconLeft"
+            [name]="iconLeft"
+        ></ui-icon>
+        <span>{{ label }}</span>
+        <ui-icon
+            testid="icon-right"
+            class="ds-button-icon-right"
+            *ngIf="iconRight"
+            [name]="iconRight"
+        ></ui-icon>
+    </ng-template>
+</button>
