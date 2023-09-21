@@ -1,0 +1,22 @@
+@use "../../../../stylesheets/variables" as variables;
+@use "../../../../stylesheets/tokens/tokens-variables" as tokens;
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.#{variables.$prefix}icon {
+    font-size: inherit;
+
+    @each $name in variables.$theme-schemas {
+        &-#{$name} {
+            color: var(--token-color-#{$name}-light);
+        }
+    }
+
+    &-inherit {
+        color: inherit;
+    }
+}
