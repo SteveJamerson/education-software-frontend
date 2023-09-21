@@ -1,6 +1,9 @@
 @use "sass:map";
 
 @use "./tokens/tokens-variables" as tokens;
+@use "./tokens/tokens-var";
+
+$prefix: "ds-";
 
 $theme-breakpoints: (
     xs: tokens.$token-breakpoints-xs,
@@ -10,3 +13,7 @@ $theme-breakpoints: (
     xl: tokens.$token-breakpoints-xl,
     xxl: tokens.$token-breakpoints-xxl,
 ) !default;
+
+$theme-status: "error", "success", "warning" !default;
+
+$theme-schemas: "principal", "error", "success", "warning" !default;

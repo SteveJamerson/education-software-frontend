@@ -1,0 +1,5 @@
+@use "./variables" as variables;
+
+.#{variables.$prefix}in-loading {
+    position: relative;
+}
