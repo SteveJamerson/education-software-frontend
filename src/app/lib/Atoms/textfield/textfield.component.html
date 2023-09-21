@@ -1,0 +1,24 @@
+<div testid="textfield" [id]="id" [ngClass]="classes">
+    <ng-content select="label"></ng-content>
+    <div class="ds-textfield-content">
+        <ng-content select="input"></ng-content>
+        <ng-content select="textarea"></ng-content>
+        <ui-icon
+            testid="icon-left"
+            class="ds-textfield-icon-left"
+            *ngIf="iconLeft"
+            [name]="iconLeft"
+            color="inherit"
+            (click)="onClickIconLeft.emit($event)"
+        ></ui-icon>
+        <ui-icon
+            testid="icon-right"
+            class="ds-textfield-icon-right"
+            *ngIf="iconRight"
+            [name]="iconRight"
+            color="inherit"
+            (click)="onClickIconRight.emit($event)"
+        ></ui-icon>
+    </div>
+    <ng-content select="small"></ng-content>
+</div>

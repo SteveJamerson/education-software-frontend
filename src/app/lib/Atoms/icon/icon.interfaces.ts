@@ -14,6 +14,7 @@ export type IconName =
     | 'angle-left'
     | 'angle-right'
     | 'angle-up'
+    | 'at'
     | 'bars'
     | 'search'
     | 'trophy'

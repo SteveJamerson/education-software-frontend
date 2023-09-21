@@ -1,0 +1,216 @@
+@use "../../../../stylesheets/variables" as variables;
+@use "../../../../stylesheets/tokens/tokens-variables" as tokens;
+
+.#{variables.$prefix}textfield {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875rem;
+    font-family: var(--token-font-family);
+    padding-block: var(--token-spacing-3);
+
+    &-content {
+        position: relative;
+        display: flex;
+        width: 100%;
+
+        .#{variables.$prefix}textfield-icon {
+            &-left,
+            &-right {
+                position: absolute;
+                inset: 0;
+                height: 24px;
+                margin: auto;
+                font-size: 24px;
+                color: var(--token-color-surface-on-light, inherit);
+                z-index: 10;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+
+            &-left {
+                right: auto;
+                left: var(--token-spacing-4);
+            }
+
+            &-right {
+                left: auto;
+                right: var(--token-spacing-4);
+            }
+        }
+    }
+
+    @each $name in variables.$theme-status {
+        &-text {
+            &.#{variables.$prefix}textfield-#{$name} {
+                input,
+                textarea {
+                    color: var(--token-color-#{$name}-light);
+                }
+            }
+
+            &:hover {
+                input,
+                textarea {
+                    background-color: var(--token-color-background-light);
+                }
+            }
+        }
+
+        &-soft {
+            &.#{variables.$prefix}textfield-#{$name} {
+                input,
+                textarea {
+                    background-color: var(
+                        --token-color-#{$name}-container-light
+                    );
+                }
+            }
+        }
+    }
+
+    input,
+    textarea {
+        height: auto;
+        min-height: 40px;
+        width: 100%;
+        padding-block: 0;
+        padding-inline: var(--token-spacing-4);
+        color: var(--token-color-surface-on-light, inherit);
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: var(--token-border-radius-medium);
+        font-size: 0.875rem;
+        font-family: var(--token-font-family);
+        appearance: none;
+        z-index: 9;
+        transition: 0.3s all;
+
+        &:focus,
+        &:focus-visible,
+        &:focus-within {
+            outline: none;
+        }
+
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration {
+            -webkit-appearance: none;
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &[type="number"] {
+            appearance: textfield;
+        }
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 40px;
+        padding-top: 16px;
+        padding-bottom: 8px;
+    }
+
+    label {
+        font-weight: 500;
+        font-size: 0.875rem;
+        color: var(--token-color-surface-on-light, inherit);
+        margin-bottom: var(--token-spacing-2);
+        max-width: 80%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        z-index: 10;
+    }
+
+    small {
+        font-size: 0.75rem;
+        margin-top: var(--token-spacing-1);
+        color: var(--token-color-surface-on-light, inherit);
+    }
+
+    &-soft {
+        input,
+        textarea {
+            background-color: var(--token-color-background-light);
+        }
+    }
+
+    &:has([disabled]) {
+        * {
+            color: var(--token-color-surface-variant-on-light) !important;
+            cursor: no-drop;
+            opacity: 0.8;
+        }
+
+        input,
+        textarea {
+            background-color: var(
+                --token-color-surface-variant-light
+            ) !important;
+
+            &::placeholder {
+                color: var(--token-color-surface-variant-on-light) !important;
+            }
+        }
+    }
+
+    &.#{variables.$prefix}textfield-small {
+        input,
+        textarea {
+            font-size: 0.75rem;
+        }
+
+        input {
+            min-height: 30px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 30px;
+            padding-top: 10px;
+            padding-bottom: 4px;
+        }
+
+        label {
+            font-size: 0.75rem;
+        }
+
+        small {
+            font-size: 0.75rem;
+        }
+    }
+
+    &.#{variables.$prefix}textfield-large {
+        input {
+            min-height: 48px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 48px;
+            padding-top: 12px;
+            padding-bottom: 4px;
+        }
+    }
+
+    &:has(.#{variables.$prefix}textfield-icon-left) {
+        input,
+        textarea {
+            padding-left: 3rem;
+        }
+    }
+
+    &:has(.#{variables.$prefix}textfield-icon-right) {
+        input,
+        textarea {
+            padding-right: 3rem;
+        }
+    }
+}

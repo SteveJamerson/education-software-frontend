@@ -41,6 +41,12 @@ ui-button {
         cursor: no-drop;
     }
 
+    &:disabled:not(&-loading) {
+        color: var(--token-color-surface-variant-on-light);
+        background-color: var(--token-color-surface-variant-light);
+        opacity: 0.8;
+    }
+
     &-loading {
         span {
             opacity: 0;
