@@ -1,0 +1,12 @@
+@use "sass:map";
+
+@use "./tokens/tokens-variables" as tokens;
+
+$theme-breakpoints: (
+    xs: tokens.$token-breakpoints-xs,
+    sm: tokens.$token-breakpoints-sm,
+    md: tokens.$token-breakpoints-md,
+    lg: tokens.$token-breakpoints-lg,
+    xl: tokens.$token-breakpoints-xl,
+    xxl: tokens.$token-breakpoints-xxl,
+) !default;
