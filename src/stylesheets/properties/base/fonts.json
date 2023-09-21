@@ -1,0 +1,13 @@
+{
+    "font": {
+        "family": { "value": "'Roboto', sans-serif" },
+        "size": {
+            "paragraph": {
+                "smaller": { "value": "12px" },
+                "small": { "value": "14px" },
+                "normal": { "value": "16px" },
+                "larger": { "value": "24px" }
+            }
+        }
+    }
+}
