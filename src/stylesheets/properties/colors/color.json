@@ -2,7 +2,7 @@
     "color": {
         "black": { "value": "{pattern.black}" },
         "white": { "value": "{pattern.white}" },
-        "primary": {
+        "principal": {
             "light": { "value": "{pattern.blue.040}" },
             "dark": { "value": "{pattern.blue.080}" },
             "container": {
@@ -18,7 +18,7 @@
                 }
             }
         },
-        "danger": {
+        "error": {
             "light": { "value": "{pattern.red.040}" },
             "dark": { "value": "{pattern.red.080}" },
             "container": {
