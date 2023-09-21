@@ -546,7 +546,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use \"../../../../stylesheets/variables\" as variables;\n@use \"../../../../stylesheets/tokens/tokens-variables\" as tokens;\n\nui-button {\n    display: block;\n}\n\n.#{variables.$prefix}button {\n    position: relative;\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    height: 40px;\n    min-width: 40px;\n    padding-inline: 1.5rem;\n    gap: var(--token-spacing-3);\n    font-family: var(--token-font-family, inherit);\n    font-size: 0.875rem;\n    font-weight: 500;\n    background-color: transparent;\n    border: 1px solid transparent;\n    border-radius: var(--token-border-radius-pill);\n    transition: 0.3s;\n    transition-property: background-color, color, box-shadow;\n    cursor: pointer;\n\n    &:hover {\n        box-shadow: 0px 4px 8px -4px var(--token-color-surface-inverse-light);\n    }\n\n    &:active,\n    &:focus,\n    &:focus-visible,\n    &:focus-within {\n        outline: none;\n        box-shadow: 0px 2px 6px -4px var(--token-color-surface-inverse-light);\n    }\n\n    &:disabled {\n        box-shadow: none !important;\n        cursor: no-drop;\n    }\n\n    &-loading {\n        span {\n            opacity: 0;\n        }\n    }\n\n    &-full {\n        width: 100%;\n    }\n\n    &-circle {\n        padding: 0;\n        aspect-ratio: 1;\n    }\n\n    @each $name in variables.$theme-schemas {\n        &-#{$name}-primary {\n            color: var(--token-color-#{$name}-on-light);\n            background-color: var(--token-color-#{$name}-light);\n        }\n\n        &-#{$name}-secondary {\n            color: var(--token-color-#{$name}-light);\n            border: 1px solid var(--token-color-outline-light);\n        }\n\n        &-#{$name}-tertiary {\n            color: var(--token-color-#{$name}-light);\n            background-color: var(--token-color-background-light);\n            box-shadow: 0px\n                2px\n                6px -4px\n                var(--token-color-surface-inverse-light);\n        }\n\n        &-#{$name}-soft {\n            color: var(--token-color-#{$name}-on-container-light);\n            background-color: var(--token-color-#{$name}-container-light);\n        }\n\n        &-#{$name}-text {\n            color: var(--token-color-#{$name}-light);\n\n            &:hover {\n                background-color: var(--token-color-background-light);\n            }\n        }\n    }\n\n    ui-icon {\n        font-size: 1.5rem;\n    }\n\n    &.#{variables.$prefix}button-small {\n        height: 30px;\n        min-width: 30px;\n        font-size: 0.75rem;\n\n        ui-icon {\n            font-size: 1.25rem;\n        }\n    }\n\n    &.#{variables.$prefix}button-large {\n        height: 48px;\n        min-width: 48px;\n        padding-inline: 1.5rem;\n    }\n\n    &-icon {\n        padding: 0 !important;\n        aspect-ratio: 1 !important;\n    }\n\n    &:has(.#{variables.$prefix}button-icon-left) {\n        padding-left: 1.5rem;\n    }\n\n    &:has(.#{variables.$prefix}button-icon-right) {\n        padding-right: 1.5rem;\n    }\n}\n\n@keyframes spin {\n    from {\n        transform: rotate(0deg);\n    }\n\n    to {\n        transform: rotate(360deg);\n    }\n}\n",
+                    "data": "@use \"../../../../stylesheets/variables\" as variables;\n@use \"../../../../stylesheets/tokens/tokens-variables\" as tokens;\n\nui-button {\n    display: block;\n}\n\n.#{variables.$prefix}button {\n    position: relative;\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    height: 40px;\n    min-width: 40px;\n    padding-inline: 1.5rem;\n    gap: var(--token-spacing-3);\n    font-family: var(--token-font-family, inherit);\n    font-size: 0.875rem;\n    font-weight: 500;\n    background-color: transparent;\n    border: 1px solid transparent;\n    border-radius: var(--token-border-radius-pill);\n    transition: 0.3s;\n    transition-property: background-color, color, box-shadow;\n    cursor: pointer;\n\n    &:hover {\n        box-shadow: 0px 4px 8px -4px var(--token-color-surface-inverse-light);\n    }\n\n    &:active,\n    &:focus,\n    &:focus-visible,\n    &:focus-within {\n        outline: none;\n        box-shadow: 0px 2px 6px -4px var(--token-color-surface-inverse-light);\n    }\n\n    &:disabled {\n        box-shadow: none !important;\n        cursor: no-drop;\n    }\n    &:disabled:not(&-loading) {\n        color: var(--token-color-surface-variant-on-light);\n        background-color: var(--token-color-surface-variant-light);\n    }\n\n    &-loading {\n        span {\n            opacity: 0;\n        }\n    }\n\n    &-full {\n        width: 100%;\n    }\n\n    &-circle {\n        padding: 0;\n        aspect-ratio: 1;\n    }\n\n    @each $name in variables.$theme-schemas {\n        &-#{$name}-primary {\n            color: var(--token-color-#{$name}-on-light);\n            background-color: var(--token-color-#{$name}-light);\n        }\n\n        &-#{$name}-secondary {\n            color: var(--token-color-#{$name}-light);\n            border: 1px solid var(--token-color-outline-light);\n        }\n\n        &-#{$name}-tertiary {\n            color: var(--token-color-#{$name}-light);\n            background-color: var(--token-color-background-light);\n            box-shadow: 0px\n                2px\n                6px -4px\n                var(--token-color-surface-inverse-light);\n        }\n\n        &-#{$name}-soft {\n            color: var(--token-color-#{$name}-on-container-light);\n            background-color: var(--token-color-#{$name}-container-light);\n        }\n\n        &-#{$name}-text {\n            color: var(--token-color-#{$name}-light);\n\n            &:hover {\n                background-color: var(--token-color-background-light);\n            }\n        }\n    }\n\n    ui-icon {\n        font-size: 1.5rem;\n    }\n\n    &.#{variables.$prefix}button-small {\n        height: 30px;\n        min-width: 30px;\n        font-size: 0.75rem;\n\n        ui-icon {\n            font-size: 1.25rem;\n        }\n    }\n\n    &.#{variables.$prefix}button-large {\n        height: 48px;\n        min-width: 48px;\n        padding-inline: 1.5rem;\n    }\n\n    &-icon {\n        padding: 0 !important;\n        aspect-ratio: 1 !important;\n    }\n\n    &:has(.#{variables.$prefix}button-icon-left) {\n        padding-left: 1.5rem;\n    }\n\n    &:has(.#{variables.$prefix}button-icon-right) {\n        padding-right: 1.5rem;\n    }\n}\n\n@keyframes spin {\n    from {\n        transform: rotate(0deg);\n    }\n\n    to {\n        transform: rotate(360deg);\n    }\n}\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -562,7 +562,7 @@
                     }
                 }
             },
-            "templateData": "<button\n    testid\n    [id]=\"id\"\n    [ngClass]=\"classes\"\n    [disabled]=\"disabled\"\n    [type]=\"type\"\n    [disabled]=\"disabled || loading\"\n    [loader]=\"loading\"\n    loaderSize=\"24px\"\n    (click)=\"onClick.emit($event)\"\n>\n    <ng-container *ngIf=\"iconOnly; else default\">\n        <ui-icon testid=\"icon-only\" [name]=\"iconOnly\"></ui-icon>\n    </ng-container>\n    <ng-template #default>\n        <ui-icon\n            testid=\"icon-left\"\n            class=\"ds-button-icon-left\"\n            *ngIf=\"iconLeft\"\n            [name]=\"iconLeft\"\n        ></ui-icon>\n        <span>{{ label }}</span>\n        <ui-icon\n            testid=\"icon-right\"\n            class=\"ds-button-icon-right\"\n            *ngIf=\"iconRight\"\n            [name]=\"iconRight\"\n        ></ui-icon>\n    </ng-template>\n</button>\n"
+            "templateData": "<button\n    testid=\"button\"\n    [id]=\"id\"\n    [ngClass]=\"classes\"\n    [disabled]=\"disabled\"\n    [type]=\"type\"\n    [disabled]=\"disabled || loading\"\n    [loader]=\"loading\"\n    (click)=\"onClick.emit($event)\"\n>\n    <ng-container *ngIf=\"iconOnly; else default\">\n        <ui-icon testid=\"icon-only\" [name]=\"iconOnly\"></ui-icon>\n    </ng-container>\n    <ng-template #default>\n        <ui-icon\n            testid=\"icon-left\"\n            class=\"ds-button-icon-left\"\n            *ngIf=\"iconLeft\"\n            [name]=\"iconLeft\"\n        ></ui-icon>\n        <span>{{ label }}</span>\n        <ui-icon\n            testid=\"icon-right\"\n            class=\"ds-button-icon-right\"\n            *ngIf=\"iconRight\"\n            [name]=\"iconRight\"\n        ></ui-icon>\n    </ng-template>\n</button>\n"
         },
         {
             "name": "IconComponent",
@@ -764,7 +764,180 @@
                     }
                 }
             },
-            "templateData": "<div\n    class=\"loading\"\n    class=\"ds-loading\"\n    [style.border-bottom-color]=\"_color\"\n    [style.height]=\"size\"\n    [style.width]=\"size\"\n></div>\n"
+            "templateData": "<div\n    class=\"ds-loading\"\n    [style.border-bottom-color]=\"_color\"\n    [style.height]=\"size\"\n    [style.width]=\"size\"\n></div>\n"
+        },
+        {
+            "name": "TextFieldComponent",
+            "id": "component-TextFieldComponent-55bd2a95b8327b5aed30a8b4671e8f42f485fe2c7bf7f4248f64941003e344176dac58272eb3a7266fd751e0f7c463d3398782489da3a214ee0cd4d03bc99d53",
+            "file": "src/app/lib/Atoms/textfield/textfield.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-textfield",
+            "styleUrls": [
+                "./textfield.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./textfield.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "iconLeft",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "IconName",
+                    "decorators": []
+                },
+                {
+                    "name": "iconRight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "IconName",
+                    "decorators": []
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "TextFieldSize",
+                    "decorators": []
+                },
+                {
+                    "name": "status",
+                    "defaultValue": "'principal'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "TextFieldStatus",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "'soft'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "TextFieldVariant",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClickIconLeft",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "EventEmitter<Event>"
+                },
+                {
+                    "name": "onClickIconRight",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "EventEmitter<Event>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n    Component,\n    ElementRef,\n    EventEmitter,\n    Input,\n    OnInit,\n    Output,\n    ViewEncapsulation,\n} from '@angular/core';\nimport { IconName } from '../../Atoms/icon/icon.interfaces';\nimport {\n    TextFieldSize,\n    TextFieldStatus,\n    TextFieldVariant,\n} from './textfield.interfaces';\n\n@Component({\n    selector: 'ui-textfield',\n    templateUrl: './textfield.component.html',\n    styleUrls: ['./textfield.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class TextFieldComponent implements OnInit {\n    @Input() id?: string;\n    @Input() status: TextFieldStatus = 'principal';\n    @Input() variant: TextFieldVariant = 'soft';\n    @Input() size?: TextFieldSize;\n    @Input() iconLeft?: IconName;\n    @Input() iconRight?: IconName;\n\n    @Output() onClickIconLeft: EventEmitter<Event> = new EventEmitter<Event>();\n    @Output() onClickIconRight: EventEmitter<Event> = new EventEmitter<Event>();\n\n    constructor(private element: ElementRef) {}\n\n    ngOnInit(): void {\n        const input = this.element.nativeElement.querySelector(\n            'input'\n        ) as HTMLInputElement;\n\n        if (input && !this.types.includes(input.type)) {\n            input.remove();\n        }\n    }\n\n    public get types(): string[] {\n        return [\n            'button',\n            'date',\n            'datetime-local',\n            'email',\n            'month',\n            'number',\n            'password',\n            'reset',\n            'search',\n            'submit',\n            'tel',\n            'text',\n            'time',\n            'url',\n            'week',\n        ];\n    }\n\n    public get classes(): string[] {\n        const clsx = [\n            'ds-textfield',\n            `ds-textfield-${this.variant}`,\n            `ds-textfield-${this.status}`,\n        ];\n        if (this.size) {\n            clsx.push(`ds-textfield-${this.size}`);\n        }\n        return clsx;\n    }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use \"../../../../stylesheets/variables\" as variables;\n@use \"../../../../stylesheets/tokens/tokens-variables\" as tokens;\n\n.#{variables.$prefix}textfield {\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    font-size: 0.875rem;\n    font-family: var(--token-font-family);\n    padding-block: var(--token-spacing-3);\n\n    &-content {\n        position: relative;\n        display: flex;\n        width: 100%;\n\n        .#{variables.$prefix}textfield-icon {\n            &-left,\n            &-right {\n                position: absolute;\n                inset: 0;\n                height: 24px;\n                margin: auto;\n                font-size: 24px;\n                color: var(--token-color-surface-on-light, inherit);\n                z-index: 10;\n                transition: 0.3s;\n                cursor: pointer;\n            }\n\n            &-left {\n                right: auto;\n                left: var(--token-spacing-4);\n            }\n\n            &-right {\n                left: auto;\n                right: var(--token-spacing-4);\n            }\n        }\n    }\n\n    @each $name in variables.$theme-status {\n        &-text {\n            &.#{variables.$prefix}textfield-#{$name} {\n                input,\n                textarea {\n                    color: var(--token-color-#{$name}-light);\n                }\n            }\n\n            &:hover {\n                input,\n                textarea {\n                    background-color: var(--token-color-background-light);\n                }\n            }\n        }\n\n        &-soft {\n            &.#{variables.$prefix}textfield-#{$name} {\n                input,\n                textarea {\n                    background-color: var(\n                        --token-color-#{$name}-container-light\n                    );\n                }\n            }\n        }\n    }\n\n    input,\n    textarea {\n        height: auto;\n        min-height: 40px;\n        width: 100%;\n        padding-block: 0;\n        padding-inline: var(--token-spacing-4);\n        color: var(--token-color-surface-on-light, inherit);\n        background-color: transparent;\n        border: 1px solid transparent;\n        border-radius: var(--token-border-radius-medium);\n        font-size: 0.875rem;\n        font-family: var(--token-font-family);\n        appearance: none;\n        z-index: 9;\n        transition: 0.3s all;\n\n        &:focus,\n        &:focus-visible,\n        &:focus-within {\n            outline: none;\n        }\n\n        &::-webkit-search-decoration,\n        &::-webkit-search-cancel-button,\n        &::-webkit-search-results-button,\n        &::-webkit-search-results-decoration {\n            -webkit-appearance: none;\n        }\n\n        &::-webkit-outer-spin-button,\n        &::-webkit-inner-spin-button {\n            -webkit-appearance: none;\n            margin: 0;\n        }\n\n        &[type=\"number\"] {\n            appearance: textfield;\n        }\n    }\n\n    textarea {\n        resize: vertical;\n        min-height: 40px;\n        padding-top: 16px;\n        padding-bottom: 8px;\n    }\n\n    label {\n        font-weight: 500;\n        font-size: 0.875rem;\n        color: var(--token-color-surface-on-light, inherit);\n        margin-bottom: var(--token-spacing-2);\n        max-width: 80%;\n        white-space: nowrap;\n        text-overflow: ellipsis;\n        overflow: hidden;\n        z-index: 10;\n    }\n\n    small {\n        font-size: 0.75rem;\n        margin-top: var(--token-spacing-1);\n        color: var(--token-color-surface-on-light, inherit);\n    }\n\n    &-soft {\n        input,\n        textarea {\n            background-color: var(--token-color-surface-variant-light);\n        }\n    }\n\n    &:has([disabled]) {\n        * {\n            color: var(--token-color-surface-variant-on-light) !important;\n            cursor: no-drop;\n        }\n\n        input,\n        textarea {\n            background-color: var(\n                --token-color-surface-variant-light\n            ) !important;\n\n            &::placeholder {\n                color: var(--token-color-surface-variant-on-light) !important;\n            }\n        }\n    }\n\n    &.#{variables.$prefix}textfield-small {\n        input,\n        textarea {\n            font-size: 0.75rem;\n        }\n\n        input {\n            min-height: 30px;\n        }\n\n        textarea {\n            resize: vertical;\n            min-height: 30px;\n            padding-top: 10px;\n            padding-bottom: 4px;\n        }\n\n        label {\n            font-size: 0.75rem;\n        }\n\n        small {\n            font-size: 0.75rem;\n        }\n    }\n\n    &.#{variables.$prefix}textfield-large {\n        input {\n            min-height: 48px;\n        }\n\n        textarea {\n            resize: vertical;\n            min-height: 48px;\n            padding-top: 12px;\n            padding-bottom: 4px;\n        }\n    }\n\n    &:has(.#{variables.$prefix}textfield-icon-left) {\n        input,\n        textarea {\n            padding-left: 3rem;\n        }\n    }\n\n    &:has(.#{variables.$prefix}textfield-icon-right) {\n        input,\n        textarea {\n            padding-right: 3rem;\n        }\n    }\n}\n",
+                    "styleUrl": "./textfield.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "element",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 32,
+                "jsdoctags": [
+                    {
+                        "name": "element",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "types": {
+                    "name": "types",
+                    "getSignature": {
+                        "name": "types",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 46
+                    }
+                },
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 66
+                    }
+                }
+            },
+            "templateData": "<div testid=\"textfield\" [id]=\"id\" [ngClass]=\"classes\">\n    <ng-content select=\"label\"></ng-content>\n    <div class=\"ds-textfield-content\">\n        <ng-content select=\"input\"></ng-content>\n        <ng-content select=\"textarea\"></ng-content>\n        <ui-icon\n            testid=\"icon-left\"\n            class=\"ds-textfield-icon-left\"\n            *ngIf=\"iconLeft\"\n            [name]=\"iconLeft\"\n            color=\"inherit\"\n            (click)=\"onClickIconLeft.emit($event)\"\n        ></ui-icon>\n        <ui-icon\n            testid=\"icon-right\"\n            class=\"ds-textfield-icon-right\"\n            *ngIf=\"iconRight\"\n            [name]=\"iconRight\"\n            color=\"inherit\"\n            (click)=\"onClickIconRight.emit($event)\"\n        ></ui-icon>\n    </div>\n    <ng-content select=\"small\"></ng-content>\n</div>\n"
         }
     ],
     "modules": [
@@ -1100,10 +1273,71 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "TextFieldModule",
+            "id": "module-TextFieldModule-3b38d939f3495db6050ad4286e7f791a7b0bffcb8773f563d76fc0c3a65b20a801cf84c8f8a161eb68ed50506e950aecc31be499b17418182452f9236bf71480",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/lib/Atoms/textfield/textfield.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { IconModule } from '../../Atoms';\nimport { DirectivesModule } from '../../Utils/directives';\nimport { TextFieldComponent } from './textfield.component';\n\n@NgModule({\n    declarations: [TextFieldComponent],\n    imports: [CommonModule, IconModule, DirectivesModule],\n    exports: [TextFieldComponent],\n})\nexport class TextFieldModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "TextFieldComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "DirectivesModule"
+                        },
+                        {
+                            "name": "IconModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "TextFieldComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
         "variables": [
+            {
+                "name": "argsDefault",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Partial<>",
+                "defaultValue": "{\n    variant: 'soft',\n    status: 'principal',\n    disabled: false,\n    type: 'text',\n    value: 'Lorem Ipsum',\n}"
+            },
             {
                 "name": "Color",
                 "ctype": "miscellaneous",
@@ -1145,6 +1379,26 @@
                 "defaultValue": "{}"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        ...argsDefault,\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        ...argsDefault,\n        disabled: true,\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+            },
+            {
                 "name": "Full",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1153,6 +1407,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n    args: {\n        full: true,\n    },\n}"
+            },
+            {
+                "name": "Hint",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        ...argsDefault,\n        small: 'hint',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
             },
             {
                 "name": "Icon",
@@ -1165,6 +1429,16 @@
                 "defaultValue": "{\n    args: {\n        variant: 'primary',\n        iconLeft: 'arrow-left',\n        iconRight: 'arrow-right',\n    },\n}"
             },
             {
+                "name": "IconLeft",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        ...argsDefault,\n        type: 'email',\n        label: 'Email',\n        iconLeft: 'at',\n        small: '',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+            },
+            {
                 "name": "IconOnly",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1175,6 +1449,26 @@
                 "defaultValue": "{\n    args: {\n        variant: 'primary',\n        iconOnly: 'arrow-right',\n        iconLeft: 'arrow-left',\n        iconRight: 'arrow-right',\n    },\n}"
             },
             {
+                "name": "IconRight",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        ...argsDefault,\n        type: 'search',\n        label: 'Search',\n        iconRight: 'search',\n        small: '',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+            },
+            {
+                "name": "Label",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        ...argsDefault,\n        label: 'Label',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+            },
+            {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1183,6 +1477,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n    args: {\n        size: 'large',\n    },\n}"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        ...argsDefault,\n        size: 'large',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
             },
             {
                 "name": "Loading",
@@ -1225,6 +1529,16 @@
                 "defaultValue": "{\n    title: 'Atoms/Loading',\n    component: LoadingComponent,\n    tags: ['autodocs'],\n    render: (args: LoadingComponent & { [key: string]: any }) => ({\n        props: {\n            size: '24px',\n            ...args,\n            color: 'principal',\n        },\n    }),\n    decorators: [\n        moduleMetadata({\n            declarations: [LoadingComponent],\n        }),\n    ],\n\n    parameters: {\n        backgrounds: {\n            default: 'dark',\n        },\n    },\n}"
             },
             {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\n    title: 'Molecules/Textfield',\n    component: TextFieldComponent,\n    tags: ['autodocs'],\n    render: (args: TextFieldComponent & { [key: string]: any }) => ({\n        props: { ...args, ...argsDefault },\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n    argTypes: {\n        variant: {\n            control: { type: 'select' },\n        },\n        status: {\n            control: { type: 'select' },\n        },\n        size: {\n            options: [undefined, 'small', 'medium'],\n            control: { type: 'select' },\n        },\n        type: {\n            options: [\n                'button',\n                'date',\n                'datetime-local',\n                'email',\n                'month',\n                'number',\n                'password',\n                'reset',\n                'search',\n                'submit',\n                'tel',\n                'text',\n                'time',\n                'url',\n                'week',\n            ],\n            control: { type: 'select' },\n        },\n    },\n    decorators: [\n        moduleMetadata({\n            declarations: [IconComponent],\n            imports: [DirectivesModule],\n        }),\n    ],\n}"
+            },
+            {
                 "name": "modules",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1233,16 +1547,6 @@
                 "deprecationMessage": "",
                 "type": "[]",
                 "defaultValue": "[ButtonModule, IconModule, LoadingModule]"
-            },
-            {
-                "name": "preview",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": ".storybook/preview.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Preview",
-                "defaultValue": "{\n    parameters: {\n        actions: { argTypesRegex: '^on[A-Z].*' },\n        controls: {\n            matchers: {\n                color: /(background|color)$/i,\n                date: /Date$/,\n            },\n        },\n    },\n}"
             },
             {
                 "name": "Primary",
@@ -1295,6 +1599,36 @@
                 "defaultValue": "{\n    args: {\n        size: 'small',\n    },\n}"
             },
             {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        ...argsDefault,\n        size: 'small',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+            },
+            {
+                "name": "Status",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        ...argsDefault,\n        status: 'error',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+            },
+            {
+                "name": "template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(args: TextFieldComponent & { [key: string]: any }) =>\n    `<ui-textfield\n      ${args.id ? `id=\"${args.id}\"` : ''}\n      ${args.variant ? `variant=\"${args.variant}\"` : ''}\n      ${args.status ? `size=\"${args.status}\"` : ''}\n      ${args.size ? `size=\"${args.size}\"` : ''}\n      ${args['iconLeft'] ? `iconLeft=\"${args['iconLeft']}\"` : ''}\n      ${args['iconRight'] ? `iconRight=\"${args['iconRight']}\"` : ''}\n      (onClickIconLeft)=\"onClickIconLeft($event)\"\n      (onClickIconRight)=\"onClickIconRight($event)\"\n    >\n         ${args['label'] ? `<label>${args['label']}</label>` : ''}\n         <input\n            type=\"${args['type']}\"\n            value=\"${args['value']}\"\n            [disabled]=\"${args['disabled']}\"\n            placeholder=\"Insira um valor\"\n         />\n         ${args['small'] ? `<small>${args['small']}</small>` : ''}\n    </ui-textfield>`"
+            },
+            {
                 "name": "Text",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1303,6 +1637,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n    args: {\n        variant: 'text',\n    },\n}"
+            },
+            {
+                "name": "Textarea",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        ...argsDefault,\n        label: 'Label',\n        small: 'hint',\n    },\n    render: (args) => ({\n        props: args,\n        template: `\n        <ui-textfield id=\"${args.id}\" variant=\"${args.variant}\" status=\"${args.status}\" size=\"${args.size}\">\n            <label>${args['label']}</label>\n            <textarea rows=\"1\" [disabled]=\"${args['disabled']}\"></textarea>\n            <small>${args['small']}</small>\n        </ui-textfield>`,\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
             },
             {
                 "name": "TokenBorderRadiusDefault",
@@ -1812,7 +2156,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
-                "defaultValue": "\"#71f7ec\""
+                "defaultValue": "\"#b1fff7\""
             },
             {
                 "name": "TokenColorSuccessDark",
@@ -1842,7 +2186,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
-                "defaultValue": "\"#71f7ec\""
+                "defaultValue": "\"#b1fff7\""
             },
             {
                 "name": "TokenColorSuccessOnContainerLight",
@@ -2052,7 +2396,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
-                "defaultValue": "\"#ffe07d\""
+                "defaultValue": "\"#fff0c8\""
             },
             {
                 "name": "TokenColorWarningDark",
@@ -2082,7 +2426,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
-                "defaultValue": "\"#ffe07d\""
+                "defaultValue": "\"#fff0c8\""
             },
             {
                 "name": "TokenColorWarningOnContainerLight",
@@ -2782,7 +3126,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
-                "defaultValue": "\"#71f7ec\""
+                "defaultValue": "\"#b1fff7\""
             },
             {
                 "name": "TokenPatternGreen095",
@@ -2792,7 +3136,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
-                "defaultValue": "\"#b1fff7\""
+                "defaultValue": "\"#c5fffc\""
             },
             {
                 "name": "TokenPatternGreen098",
@@ -3112,7 +3456,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
-                "defaultValue": "\"#ffe07d\""
+                "defaultValue": "\"#fff0c8\""
             },
             {
                 "name": "TokenPatternYellow095",
@@ -3122,7 +3466,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
-                "defaultValue": "\"#fff0c8\""
+                "defaultValue": "\"#fff4c6\""
             },
             {
                 "name": "TokenPatternYellow098",
@@ -3373,6 +3717,26 @@
                 "deprecationMessage": "",
                 "type": "string",
                 "defaultValue": "\"auto\""
+            },
+            {
+                "name": "Type",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        ...argsDefault,\n        type: 'number',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+            },
+            {
+                "name": "Variant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        ...argsDefault,\n        variant: 'text',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
             }
         ],
         "functions": [],
@@ -3425,7 +3789,7 @@
                 "name": "IconName",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"arrow-down\" | \"arrow-left\" | \"arrow-right\" | \"arrow-up\" | \"angle-down\" | \"angle-left\" | \"angle-right\" | \"angle-up\" | \"bars\" | \"search\" | \"trophy\" | \"user\"",
+                "rawtype": "\"arrow-down\" | \"arrow-left\" | \"arrow-right\" | \"arrow-up\" | \"angle-down\" | \"angle-left\" | \"angle-right\" | \"angle-up\" | \"at\" | \"bars\" | \"search\" | \"trophy\" | \"user\"",
                 "file": "src/app/lib/Atoms/icon/icon.interfaces.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3475,10 +3839,206 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "TextFieldSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"small\" | \"large\"",
+                "file": "src/app/lib/Atoms/textfield/textfield.interfaces.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 189
+            },
+            {
+                "name": "TextFieldStatus",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"principal\" | \"error\" | \"warning\" | \"success\"",
+                "file": "src/app/lib/Atoms/textfield/textfield.interfaces.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 189
+            },
+            {
+                "name": "TextFieldVariant",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"soft\" | \"text\"",
+                "file": "src/app/lib/Atoms/textfield/textfield.interfaces.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 189
             }
         ],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/lib/Atoms/textfield/textfield.stories.ts": [
+                {
+                    "name": "argsDefault",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Partial<>",
+                    "defaultValue": "{\n    variant: 'soft',\n    status: 'principal',\n    disabled: false,\n    type: 'text',\n    value: 'Lorem Ipsum',\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        ...argsDefault,\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        ...argsDefault,\n        disabled: true,\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+                },
+                {
+                    "name": "Hint",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        ...argsDefault,\n        small: 'hint',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+                },
+                {
+                    "name": "IconLeft",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        ...argsDefault,\n        type: 'email',\n        label: 'Email',\n        iconLeft: 'at',\n        small: '',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+                },
+                {
+                    "name": "IconRight",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        ...argsDefault,\n        type: 'search',\n        label: 'Search',\n        iconRight: 'search',\n        small: '',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+                },
+                {
+                    "name": "Label",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        ...argsDefault,\n        label: 'Label',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+                },
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        ...argsDefault,\n        size: 'large',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\n    title: 'Molecules/Textfield',\n    component: TextFieldComponent,\n    tags: ['autodocs'],\n    render: (args: TextFieldComponent & { [key: string]: any }) => ({\n        props: { ...args, ...argsDefault },\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n    argTypes: {\n        variant: {\n            control: { type: 'select' },\n        },\n        status: {\n            control: { type: 'select' },\n        },\n        size: {\n            options: [undefined, 'small', 'medium'],\n            control: { type: 'select' },\n        },\n        type: {\n            options: [\n                'button',\n                'date',\n                'datetime-local',\n                'email',\n                'month',\n                'number',\n                'password',\n                'reset',\n                'search',\n                'submit',\n                'tel',\n                'text',\n                'time',\n                'url',\n                'week',\n            ],\n            control: { type: 'select' },\n        },\n    },\n    decorators: [\n        moduleMetadata({\n            declarations: [IconComponent],\n            imports: [DirectivesModule],\n        }),\n    ],\n}"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        ...argsDefault,\n        size: 'small',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+                },
+                {
+                    "name": "Status",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        ...argsDefault,\n        status: 'error',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+                },
+                {
+                    "name": "template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(args: TextFieldComponent & { [key: string]: any }) =>\n    `<ui-textfield\n      ${args.id ? `id=\"${args.id}\"` : ''}\n      ${args.variant ? `variant=\"${args.variant}\"` : ''}\n      ${args.status ? `size=\"${args.status}\"` : ''}\n      ${args.size ? `size=\"${args.size}\"` : ''}\n      ${args['iconLeft'] ? `iconLeft=\"${args['iconLeft']}\"` : ''}\n      ${args['iconRight'] ? `iconRight=\"${args['iconRight']}\"` : ''}\n      (onClickIconLeft)=\"onClickIconLeft($event)\"\n      (onClickIconRight)=\"onClickIconRight($event)\"\n    >\n         ${args['label'] ? `<label>${args['label']}</label>` : ''}\n         <input\n            type=\"${args['type']}\"\n            value=\"${args['value']}\"\n            [disabled]=\"${args['disabled']}\"\n            placeholder=\"Insira um valor\"\n         />\n         ${args['small'] ? `<small>${args['small']}</small>` : ''}\n    </ui-textfield>`"
+                },
+                {
+                    "name": "Textarea",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        ...argsDefault,\n        label: 'Label',\n        small: 'hint',\n    },\n    render: (args) => ({\n        props: args,\n        template: `\n        <ui-textfield id=\"${args.id}\" variant=\"${args.variant}\" status=\"${args.status}\" size=\"${args.size}\">\n            <label>${args['label']}</label>\n            <textarea rows=\"1\" [disabled]=\"${args['disabled']}\"></textarea>\n            <small>${args['small']}</small>\n        </ui-textfield>`,\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+                },
+                {
+                    "name": "Type",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        ...argsDefault,\n        type: 'number',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+                },
+                {
+                    "name": "Variant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        ...argsDefault,\n        variant: 'text',\n    },\n    render: (args) => ({\n        props: args,\n        template: template(args),\n        styles: [`ui-textfield { display: block; max-width: 300px; }`],\n    }),\n}"
+                }
+            ],
             "src/app/lib/Atoms/icon/icon.stories.ts": [
                 {
                     "name": "Color",
@@ -3675,18 +4235,6 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[ButtonModule, IconModule, LoadingModule]"
-                }
-            ],
-            ".storybook/preview.ts": [
-                {
-                    "name": "preview",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": ".storybook/preview.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Preview",
-                    "defaultValue": "{\n    parameters: {\n        actions: { argTypesRegex: '^on[A-Z].*' },\n        controls: {\n            matchers: {\n                color: /(background|color)$/i,\n                date: /Date$/,\n            },\n        },\n    },\n}"
                 }
             ],
             "src/stylesheets/tokens/index.ts": [
@@ -4198,7 +4746,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
-                    "defaultValue": "\"#71f7ec\""
+                    "defaultValue": "\"#b1fff7\""
                 },
                 {
                     "name": "TokenColorSuccessDark",
@@ -4228,7 +4776,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
-                    "defaultValue": "\"#71f7ec\""
+                    "defaultValue": "\"#b1fff7\""
                 },
                 {
                     "name": "TokenColorSuccessOnContainerLight",
@@ -4438,7 +4986,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
-                    "defaultValue": "\"#ffe07d\""
+                    "defaultValue": "\"#fff0c8\""
                 },
                 {
                     "name": "TokenColorWarningDark",
@@ -4468,7 +5016,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
-                    "defaultValue": "\"#ffe07d\""
+                    "defaultValue": "\"#fff0c8\""
                 },
                 {
                     "name": "TokenColorWarningOnContainerLight",
@@ -5168,7 +5716,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
-                    "defaultValue": "\"#71f7ec\""
+                    "defaultValue": "\"#b1fff7\""
                 },
                 {
                     "name": "TokenPatternGreen095",
@@ -5178,7 +5726,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
-                    "defaultValue": "\"#b1fff7\""
+                    "defaultValue": "\"#c5fffc\""
                 },
                 {
                     "name": "TokenPatternGreen098",
@@ -5498,7 +6046,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
-                    "defaultValue": "\"#ffe07d\""
+                    "defaultValue": "\"#fff0c8\""
                 },
                 {
                     "name": "TokenPatternYellow095",
@@ -5508,7 +6056,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
-                    "defaultValue": "\"#fff0c8\""
+                    "defaultValue": "\"#fff4c6\""
                 },
                 {
                     "name": "TokenPatternYellow098",
@@ -5816,7 +6364,7 @@
                     "name": "IconName",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"arrow-down\" | \"arrow-left\" | \"arrow-right\" | \"arrow-up\" | \"angle-down\" | \"angle-left\" | \"angle-right\" | \"angle-up\" | \"bars\" | \"search\" | \"trophy\" | \"user\"",
+                    "rawtype": "\"arrow-down\" | \"arrow-left\" | \"arrow-right\" | \"arrow-up\" | \"angle-down\" | \"angle-left\" | \"angle-right\" | \"angle-up\" | \"at\" | \"bars\" | \"search\" | \"trophy\" | \"user\"",
                     "file": "src/app/lib/Atoms/icon/icon.interfaces.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -5873,6 +6421,54 @@
                     "description": "",
                     "kind": 180
                 }
+            ],
+            "src/app/lib/Atoms/textfield/textfield.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "src/app/lib/Atoms/textfield/textfield.interfaces.ts": [
+                {
+                    "name": "TextFieldSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"small\" | \"large\"",
+                    "file": "src/app/lib/Atoms/textfield/textfield.interfaces.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 189
+                },
+                {
+                    "name": "TextFieldStatus",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"principal\" | \"error\" | \"warning\" | \"success\"",
+                    "file": "src/app/lib/Atoms/textfield/textfield.interfaces.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 189
+                },
+                {
+                    "name": "TextFieldVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"soft\" | \"text\"",
+                    "file": "src/app/lib/Atoms/textfield/textfield.interfaces.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 189
+                }
             ]
         }
     },
@@ -5894,16 +6490,6 @@
         "count": 0,
         "status": "low",
         "files": [
-            {
-                "filePath": ".storybook/preview.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "preview",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
             {
                 "filePath": "src/app/app.component.ts",
                 "type": "component",
@@ -6126,6 +6712,165 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Size",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextFieldComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "argsDefault",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Hint",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconLeft",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconRight",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Label",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Status",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Textarea",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Type",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/lib/Atoms/textfield/textfield.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Variant",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
